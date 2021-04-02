@@ -1,6 +1,6 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { IPetStore, Pet, PetStore, Status } from '../generated-code/pet-store.service';
+import { Pet, PetStore, Status } from '../generated-code/pet-store.service';
 
 @Component({
   selector: 'app-pet',
@@ -8,6 +8,8 @@ import { IPetStore, Pet, PetStore, Status } from '../generated-code/pet-store.se
   styleUrls: ['./pet.component.css']
 })
 export class PetComponent implements OnInit, OnDestroy {
+  columns: string[] = ['name', 'status'];
+  columnsToDisplay = this.columns.slice();
   pets$: Observable<Pet[]>;
   pets: Pet[];
   petSubscription: Subscription;
@@ -42,7 +44,7 @@ export class PetComponent implements OnInit, OnDestroy {
       console.log(error);
     });
   }
-  
+
   fetchPetsByStatus(): Promise<Response> {
     return fetch('https://petstore.swagger.io/v2/pet/findByStatus?status=available');
   }
