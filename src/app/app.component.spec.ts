@@ -21,7 +21,6 @@ describe('AppComponent', () => {
     component = myFixture.componentInstance;
   });
 
-
   it('should create app', () => {
     expect(component).toBeTruthy();
   });
@@ -37,11 +36,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should have a an element somewhere in the html with "rocket-smoke" as the id', () => {
+  it('should have a an element somewhere in the html with "rocket" as the id', () => {
     // If the query doesn't find anything, it returns null
     // const rocket = myFixture.nativeElement.querySelector('#rocket-smoke');
     // alternate way to query.  DO NOT use the "By" from protractor.
-    const rocket = myFixture.debugElement.query(By.css('#rocket-smoke'));
+    const rocket = myFixture.debugElement.query(By.css('#rocket'));
 
     expect(rocket).toBeTruthy();
   });
