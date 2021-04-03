@@ -20,7 +20,7 @@ describe('PetComponent', () => {
     }),
   ];
 
- /* In any .Net unit testing framwork, there's the concept of mocks.  You can could be using a library like NSubstitute, Moq, or
+ /* In any .Net unit testing framwork, there's the concept of mocks.  You could be using a library like NSubstitute, Moq, or
   * something similar and you'll run into the same concepts.  We mock dependencies so we can control the behavior
   * of them.  As with any mock, you can setup what gets returned when some method gets called.  You can also verify that the method
   * has been called.  So, if you've used "myMock.Setup(x => x.SomeMethod()).Returns(junk);" you can get used to using Spies.  They're
